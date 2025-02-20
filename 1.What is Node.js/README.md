@@ -19,4 +19,4 @@ It is a computer environment where user inputs are read evaluated, and then the 
 
 Below is an usecase of Node REPL:
 
-![Node REPL](./assets/images/Node_REPL.png)
+![Node REPL](./pictures/Node_REPL.png)
