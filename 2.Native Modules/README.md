@@ -5,7 +5,8 @@
 **All file system operations have synchronous, callback and promise-based forms and are accessible using both CommonJS syntax and ES6 modules (ESM).**
 
 **To use `fs` import it by using**
-- `const fs = require("fs");` 
+- `const fs = require("fs");` - **CommonJS Way**
+- `import * as fs from "node:fs;"` - **ECMAScript Way (default now)**
 
 ## `fs.writeFile(file,data[,options],callback)` 
 
