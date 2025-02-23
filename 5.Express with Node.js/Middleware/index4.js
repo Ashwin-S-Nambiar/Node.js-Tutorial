@@ -7,10 +7,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const port = 3000;
-var bandName = "";
+let bandName = "";
 
+// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Second middleware that sets the band name
 function bandNameGenerator(req, res, next) {
   console.log(req.body);
   bandName = req.body["street"] + req.body["pet"];
