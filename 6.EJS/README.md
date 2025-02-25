@@ -34,3 +34,17 @@ app.set('view engine', 'ejs');
 ```
 
 With EJS, you can create dynamic and interactive web pages with ease.
+
+## EJS Tags
+
+`<%= variable %>`               ==>     JS Output
+
+`<% console.log("hello") %>`    ==>     JS Execute (Does not give o/p)   
+
+`<%- <h1>Hello</h1> %>`         ==>     Render HTML
+
+`<%% %%>`                       ==>     Escape character
+
+`<%# Comment here  %>`          ==>     Stop Execution
+
+`<%- include("header.ejs") %>`  ==>     Insert another EJS file
