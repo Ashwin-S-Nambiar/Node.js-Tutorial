@@ -48,3 +48,57 @@ With EJS, you can create dynamic and interactive web pages with ease.
 `<%# Comment here  %>`          ==>     Stop Execution
 
 `<%- include("header.ejs") %>`  ==>     Insert another EJS file
+
+## Passing Data to EJS Templates
+
+EJS templates can receive and display dynamic data from your Express routes. You pass data as an object to the `render` method, and then access these variables directly in your templates.
+
+### Example
+
+In your Express route:
+```javascript
+app.get('/', (req, res) => {
+    res.render('index', {
+        title: 'Home Page',
+        user: { name: 'John Doe' },
+        items: ['Item 1', 'Item 2', 'Item 3']
+    });
+});
+```
+
+In your EJS template (index.ejs):
+```html
+<h1><%= title %></h1>
+<p>Welcome, <%= user.name %></p>
+<ul>
+    <% items.forEach(item => { %>
+        <li><%= item %></li>
+    <% }); %>
+</ul>
+```
+
+This pattern allows you to separate your application logic from your presentation layer while maintaining a clean and maintainable codebase.
+
+## Using the `locals` Object in EJS
+
+The `locals` object in EJS is a special container that holds all variables passed to your template when it's rendered. Using the `locals` prefix allows you to explicitly access these variables within your templates.
+
+### Benefits of Using `locals`
+
+- **Error Prevention**: Using `locals.variable` instead of directly accessing a variable prevents "variable is not defined" errors if the variable doesn't exist
+- **Safe Conditional Checks**: Makes it easy to check if optional data exists before using it
+- **Code Clarity**: Explicitly shows that you're accessing data passed to the template
+
+### Example
+
+In your Express route:
+```javascript
+app.get('/profile', (req, res) => {
+    // The user might be logged in or not
+    const userData = getCurrentUser(); // Could be null
+    
+    res.render('profile', {
+        title: 'User Profile',
+        user: userData
+    });
+});
