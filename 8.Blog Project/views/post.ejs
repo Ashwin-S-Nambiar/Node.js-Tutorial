@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="single-post">
+        <h1><%= post.title %></h1>
+        <div class="post-meta">
+            <span><i class="fas fa-user"></i> <%= post.author %></span>
+            <span><i class="far fa-calendar"></i> <%= post.date %></span>
+        </div>
+        
+        <div class="post-content-full">
+            <p><%= post.content %></p>
+        </div>
+        
+        <div class="post-actions">
+            <a href="/edit/<%= post.id %>" class="btn secondary-btn"><i class="fas fa-edit"></i> Edit</a>
+            <form action="/delete/<%= post.id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?')">
+                <button type="submit" class="btn danger-btn"><i class="fas fa-trash"></i> Delete</button>
+            </form>
+            <a href="/" class="btn outline-btn"><i class="fas fa-arrow-left"></i> Back</a>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

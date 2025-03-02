@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="form-container">
+        <h1>Create New Blog Post</h1>
+        
+        <form action="/create" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required placeholder="Enter post title">
+            </div>
+            
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" placeholder="Your name">
+            </div>
+            
+            <div class="form-group">
+                <label for="content">Content</label>
+                <textarea id="content" name="content" rows="10" required placeholder="Write your blog post here..."></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn primary-btn"><i class="fas fa-save"></i> Publish Post</button>
+                <a href="/" class="btn outline-btn"><i class="fas fa-times"></i> Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

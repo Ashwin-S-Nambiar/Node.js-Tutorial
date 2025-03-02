@@ -1,1 +1,41 @@
-<h1>Hello World</h1>
+<%- include('partials/header') %>
+
+<div class="container">
+    <div class="hero-section">
+        <h1>Welcome to BlogHub</h1>
+        <p>Share your thoughts with the world</p>
+        <a href="/create" class="btn primary-btn"><i class="fas fa-plus"></i> Create New Post</a>
+    </div>
+
+    <div class="posts-container">
+        <h2>Recent Posts</h2>
+        
+        <% if(posts.length === 0) { %>
+            <div class="empty-state">
+                <i class="fas fa-book-open"></i>
+                <p>No posts yet. Be the first to create one!</p>
+                <a href="/create" class="btn primary-btn">Create Post</a>
+            </div>
+        <% } else { %>
+            <div class="posts-grid">
+                <% posts.forEach(post => { %>
+                    <div class="post-card">
+                        <h3><%= post.title %></h3>
+                        <p class="post-meta">
+                            <span><i class="fas fa-user"></i> <%= post.author %></span>
+                            <span><i class="far fa-calendar"></i> <%= post.date %></span>
+                        </p>
+                        <div class="post-content">
+                            <%= post.content.substring(0, 150) + (post.content.length > 150 ? '...' : '') %>
+                        </div>
+                        <div class="post-actions">
+                            <a href="/post/<%= post.id %>" class="btn secondary-btn">Read More</a>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
