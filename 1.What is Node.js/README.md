@@ -3,7 +3,7 @@
 ## **What is Node.js?**
 **Node** is an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications.
 
-**Node helps to run JavaScript in any place other than the browser.**
+**Node helps us to run JavaScript in any place other than the browser.**
 
 ## **Advantages**
 - **Node helps us to build an application using JavaScript.**
