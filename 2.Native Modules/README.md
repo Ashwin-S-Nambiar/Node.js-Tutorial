@@ -1,6 +1,6 @@
 # File system `fs`
 
-**A native node module that allows interacting with the file system in a way modeled on standard POSIX functions.**
+**A native node module that allows interacting with the file system in a way modeled on standard ***POSIX*** functions.**
 
 **All file system operations have synchronous, callback and promise-based forms and are accessible using both CommonJS syntax and ES6 modules (ESM).**
 
@@ -15,9 +15,9 @@
 ### Using `fs.writeFile`
 **Check this Node.js program to see it working: [index.js](index.js)**
 
-![Terminal](./pictures/fs.writeFile.png)
+![terminal](./pictures/fs.writeFile.png)
 
-![File](./pictures/writeFile.png)
+![message.txt](./pictures/writeFile.png)
 
 ## `fs.readFile(path,[,options],callback)`
 
@@ -25,6 +25,6 @@
 
 ### Using `fs.readFile`
 
-![File](./pictures/readFile.png)
+![msg.txt](./pictures/readFile.png)
 
-![Terminal](./pictures/fs.readFile.png)
+![terminal](./pictures/fs.readFile.png)
